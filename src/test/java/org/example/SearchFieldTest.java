@@ -32,9 +32,8 @@ public class SearchFieldTest {
     @Test
     public void incorrectInput() {
         MainPage mainPage = new MainPage(driver);
-        mainPage.openPage().searchItem(INCORRECT_INFORMATION);
-        String wr = new SearchResultPage(driver).getIncorrectSearchResultText();
-        Assert.assertEquals(NO_RESULTS_FOR + INCORRECT_INFORMATION + ".", wr);
+        String incorrectSearchValue = mainPage.openPage().searchItem(INCORRECT_INFORMATION).getIncorrectSearchResultText();
+        Assert.assertEquals(NO_RESULTS_FOR + INCORRECT_INFORMATION + ".", incorrectSearchValue);
     }
 
     @Test
